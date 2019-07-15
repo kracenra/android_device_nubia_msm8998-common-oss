@@ -103,6 +103,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.tnr_cds=1 \
     persist.camera.tnr.video=1
 
+# Charger
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.charger.enable_suspend=true
+
 # CNE
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.vendor.cne.feature=1
