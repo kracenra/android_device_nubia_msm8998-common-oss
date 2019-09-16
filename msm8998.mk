@@ -276,6 +276,13 @@ PRODUCT_PACKAGES += \
 # Ramdisk nubia customization
 PRODUCT_PACKAGES += \
     init.nb.sensor.rc
+    
+# IMS
+PRODUCT_PACKAGES += \
+    ims-ext-common_system
+
+PRODUCT_BOOT_JARS += \
+    ims-ext-common_system
 
 # IPv6
 PRODUCT_PACKAGES += \
