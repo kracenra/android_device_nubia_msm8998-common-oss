@@ -231,6 +231,10 @@ vendor/lib64/vendor.display.color@1.0.so|3939e4d1ab4f74e6bbd04524a9e6211ade9c5d0
 vendor/lib64/vendor.display.color@1.1.so|ce0030a7e6593236277962ffff290b834eaf1f25
 vendor/lib64/vendor.display.postproc@1.0.so|0b578a42706c770c6c61eccdee8a9e4c89c08b10
 
+# QMI - from jasmine V11.0.15.0.QDIMIXM
+vendor/lib/libqmi_cci.so|b310d02f4e997a8867dc78bf5628db21ea61b7d4
+vendor/lib64/libqmi_cci.so|00d7bfe2ca99b9ec477235b39cb3b7b3bb501930
+
 # QMI - from LA.UM.8.2.r1-05700-sdm660.0
 vendor/etc/permissions/qti_libpermissions.xml::system_ext/etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
 vendor/etc/permissions/qti_permissions.xml::system_ext/etc/permissions/qti_permissions.xml|e6ff4572352b1a4f91b6b9d7cbb1cad9924410a0
@@ -243,7 +247,6 @@ vendor/lib/libidl.so|044973969a6f2cb5593c8ee71010ab2156972928
 vendor/lib/libqdi.so|8a9fa09f1b383f5ef46da145eb2caf74c17e5f66
 vendor/lib/libqdp.so|2e10a337f1dcf24513c995fc2c1553310f6cd6b2
 vendor/lib/libqmi.so|5c8431856da1b75273fe0e0d2b972d61ce1656c2
-vendor/lib/libqmi_cci.so|db83b7328a3741af1793e6ef9c293d7cac354b4d
 vendor/lib/libqmi_client_helper.so|24c5fcde4de715cdc2881b770af51877f50a0338
 vendor/lib/libqmi_client_qmux.so|085b07bf2220882a7e5e726cb03eece2d41b15a4
 vendor/lib/libqmi_common_so.so|04bcd47689be51500fa1f9fb7aa398cdd757cd86
@@ -257,7 +260,6 @@ vendor/lib64/libidl.so|fda78e792c95e858ce9c1eb43d08b1c742c2a867
 vendor/lib64/libqdi.so|692b745c901e1635c5f7b73dca2b550cb8023f9f
 vendor/lib64/libqdp.so|41715294a8ef353753370a0f81075c7882da8c38
 vendor/lib64/libqmi.so|1cd9b28d0f5141ba3465a592183ce79e1ca72fbc
-vendor/lib64/libqmi_cci.so|2c68a7fdf1b0658c09182f60e38371b527e292c0
 vendor/lib64/libqmi_client_helper.so|8765b77af7036eb4c9040a18fbedb74317e17e28
 vendor/lib64/libqmi_client_qmux.so|c63967474988996f9504b6e6cc5eafd7d7e8f266
 vendor/lib64/libqmi_common_so.so|325a41290032b082248db307481811b2319284cc
