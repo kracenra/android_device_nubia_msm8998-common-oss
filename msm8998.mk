@@ -485,6 +485,7 @@ $(call inherit-product, build/target/product/verity.mk)
 
 # VNDK
 PRODUCT_PACKAGES += \
+    libgui_vendor \
     libstdc++.vendor
 
 # Wifi
