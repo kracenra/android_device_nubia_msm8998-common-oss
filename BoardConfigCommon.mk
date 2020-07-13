@@ -24,8 +24,6 @@
 
 COMMON_PATH := device/nubia/msm8998-common
 
-BOARD_VENDOR := nubia
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8998
 TARGET_NO_BOOTLOADER := true
