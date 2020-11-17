@@ -269,11 +269,11 @@ vendor/lib64/libqmi_csi.so|7e5e2b8404fc738a56d3233adb0b9903781e7fec
 vendor/lib64/libqmi_encdec.so|8e25d52ee0f389bd13e6e26687b5c19e560ba0e7
 vendor/lib64/libqmiservices.so|41aa6d0defc6fb57b7f275b719e9ecc9ac792a7e
 
-# RIL - from LA.UM.8.2.r1-05700-sdm660.0
-product/etc/permissions/qcrilhook.xml:system_ext/etc/permissions/qcrilhook.xml|ceb890ab3c1645aa0d0044abab1ba58c4097a991
-product/framework/qcrilhook.jar:system_ext/framework/qcrilhook.jar|23768fda90519d799e682fd058ec85b7b5cd6f89
-product/framework/qti-telephony-common.jar:system_ext/framework/qti-telephony-common.jar|180e59fb4d79e00612526c243b94711630940733
-product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk:system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|71d083671c3ea4cd5e287a63fb254bb0ab60ed20
+# RIL - from jasmine V11.0.15.0.QDIMIXM
+product/etc/permissions/qcrilhook.xml:system_ext/etc/permissions/qcrilhook.xml|ceb890ab3c1645aa0d0044abab1ba58c4097a991|4e58dc0e3d4391451fc67ad0d5e9ee5943631e54
+product/framework/qcrilhook.jar:system_ext/framework/qcrilhook.jar|4eece9eb40a8976d2fd9a6a4d5d6dfea0c7674f5
+product/framework/qti-telephony-common.jar:system_ext/framework/qti-telephony-common.jar|5b1c23ce0d42e1b666d387eedde3444dd07e61bc
+-product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk:system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|20c011ffc54539161fa7cc05c55c9c5ed3f936b4
 
 # RIL - from nx616j - PKQ1.180929.001
 -app/datastatusnotification/datastatusnotification.apk:system_ext/app/datastatusnotification/datastatusnotification.apk|977cf1cd31bc103668583b4dfd426094117f4030
