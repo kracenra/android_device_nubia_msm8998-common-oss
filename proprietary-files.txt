@@ -1,3 +1,4 @@
+# jasmine package version: V11.0.15.0.QDIMIXM, unless stated otherwise
 # Alarm - from jasmine
 -product/app/PowerOffAlarm/PowerOffAlarm.apk|46387fe02067df3c4c09ec49fff7737473ea1145
 vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|faccc2a7d94d486c2f61a5fe85f5c4598b4147a7
