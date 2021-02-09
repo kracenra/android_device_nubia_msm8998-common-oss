@@ -144,7 +144,7 @@ vendor/lib64/libtinyxml2_1.so|ba981e332895a053a67fc54a8190365a3ad37f2d
 # Media - from jasmine
 lib/libFileMux.so|79661e6dffc90234ad446641264fd0fa1a3fe6ab
 lib/libmmosal.so|9464733295e192301b2577f52fab720e72c0d152
-lib/libmmparser_lite.so|bf5f6c1e571742cafe951b9c1c30a6cf92b6bfb8
+lib/libmmparser_lite.so|4e047a0cd0e271325cc08ac1f4022def1ce261bd
 lib/libOmxMux.so|1ad1aa835a3dfb8bfea2a29291f82a173ba6a868
 lib64/libmmosal.so|9ceff2581e86d32bc2795dffb96ebe4bdc88f2f7
 vendor/lib/libAlacSwDec.so|bca4278cb74a63772a0fc369480b5d9814063d9b
