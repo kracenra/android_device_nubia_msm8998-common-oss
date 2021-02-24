@@ -76,7 +76,6 @@ vendor/lib64/libspl.so
 vendor/lib64/libssd.so
 
 # Gatekeeper -from nx563j stock 9.0 firmware
-vendor/lib/hw/gatekeeper.msm8998.so
 vendor/lib64/hw/gatekeeper.msm8998.so
 
 # Graphics -from nx563j stock 9.0 firmware
@@ -161,24 +160,15 @@ vendor/firmware/ipa_fws.mdt
 
 # IRQ balance -from nx563j stock 9.0 firmware
 vendor/bin/msm_irqbalance
-vendor/bin/energy-awareness
 
 # Keystore -from nx563j stock 9.0 firmware
-vendor/lib/hw/keystore.msm8998.so
 vendor/lib64/hw/keystore.msm8998.so
-vendor/lib64/libkeymasterdeviceutils.so
-vendor/lib64/libkeymasterprovision.so
-vendor/lib64/libkeymasterutils.so
 
 # Listen -from nx563j stock 9.0 firmware
 vendor/lib/hw/sound_trigger.primary.msm8998.so
 vendor/lib/libsmwrapper.so
 
 # Perf -from nx563j stock 9.0 firmware
-lib/libqti_performance.so:vendor/lib/libqti_performance.so
-lib/libqti-perfd-client_system.so:vendor/lib/libqti-perfd-client_system.so
-lib64/libqti_performance.so:vendor/lib64/libqti_performance.so
-lib64/libqti-perfd-client_system.so:vendor/lib64/libqti-perfd-client_system.so
 vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
 vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
 vendor/etc/perf/commonresourceconfigs.xml
@@ -197,12 +187,10 @@ vendor/lib/libperfgluelayer.so
 vendor/lib/libqti-perfd-client.so
 vendor/lib/libqti-perfd.so
 vendor/lib/libqti-util.so
-vendor/lib/libqti-utils.so
 vendor/lib64/libperfgluelayer.so
 vendor/lib64/libqti-perfd-client.so
 vendor/lib64/libqti-perfd.so
 vendor/lib64/libqti-util.so
-vendor/lib64/libqti-utils.so
 
 # Sensors -from nx563j stock 9.0 firmware
 vendor/etc/sensors/hals.conf
