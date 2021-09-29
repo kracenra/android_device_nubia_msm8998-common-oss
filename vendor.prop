@@ -108,6 +108,10 @@ vidc.enc.dcvs.extra-buff-count=2
 PRODUCT_PRODUCT_PROPERTIES +=
 ro.charger.enable_suspend=true
 
+# Chipset
+ro.soc.manufacturer=Qualcomm
+ro.soc.model=MSM8998
+
 # CNE
 persist.vendor.cne.feature=1
 
