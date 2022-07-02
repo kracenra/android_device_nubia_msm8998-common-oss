@@ -1,5 +1,5 @@
 #============= hal_fingerprint_goodix ==============
-type hal_fingerprint_goodix, domain, binder_in_vendor_violators;
+type hal_fingerprint_goodix, domain;
 type hal_fingerprint_goodix_exec, exec_type, vendor_file_type, file_type;
 typeattribute hal_fingerprint_goodix data_between_core_and_vendor_violators;
 hal_server_domain(hal_fingerprint_goodix, hal_fingerprint)
