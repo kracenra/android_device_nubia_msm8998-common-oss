@@ -110,7 +110,7 @@ PRODUCT_PACKAGES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0.vendor \
-    android.hardware.bluetooth.audio@2.0-impl:32 \
+    android.hardware.bluetooth.audio-impl \
     audio.bluetooth.default \
     vendor.qti.hardware.btconfigstore@1.0.vendor
 
