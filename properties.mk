@@ -94,9 +94,14 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.camera.preview.ubwc=0 \
-    vendor.video.disable.ubwc=1 \
-    vidc.enc.dcvs.extra-buff-count=2
+    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap \
+    persist.vendor.camera.vdbea.switch=1 \
+    persist.vendor.camera.depth.focus.cb=0 \
+    persist.camera.vdbea.switch=1 \
+    persist.camera.depth.focus.cb=0 \
+    persist.ts.rtmakeup=false \
+    persist.camera.tnr_cds=1 \
+    persist.camera.tnr.video=1
 
 # CNE
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -185,7 +190,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.sensors.dev_ori=true \
     ro.vendor.sensors.pmd=true \
     ro.vendor.sensors.sta_detect=true \
-    ro.vendor.sensors.mot_detect=true
+    ro.vendor.sensors.mot_detect=true \
+    ro.vendor.sensors.dpc=true \
+    ro.vendor.sensors.multishake=true \
+    persist.vendor.sensors.direct_channel=true
 
 # Time
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -194,3 +202,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # WFD
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.debug.wfd.enable=1
+    
+# NFC
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.nfc.port=I2C \
+    persist.nfc.smartcard.config=SIM1,eSE1 \
+    persist.sys.switch_se=2 \
+    persist.sys.remove_beam=0 \
+    persist.sys.nfc_reader_twinkle=true \
+    ro.hardware.nfc_nci=bcm2079x.default
