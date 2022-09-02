@@ -59,26 +59,10 @@ if [ -z "$SRC" ]; then
     SRC=adb
 fi
 
-function blob_fixup() {
-    case "${1}" in
-
-    vendor/bin/mlipayd@1.1)
-        patchelf --remove-needed vendor.xiaomi.hardware.mtdservice@1.0.so "${2}"
-        ;;
-
-    vendor/lib64/libmlipay.so | vendor/lib64/libmlipay@1.1.so)
-        patchelf --remove-needed vendor.xiaomi.hardware.mtdservice@1.0.so "${2}"
-        sed -i "s|/system/etc/firmware|/vendor/firmware\x0\x0\x0\x0|g" "${2}"
-        ;;
-    esac
-}
-
 # Initialize the common helper
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true $CLEAN_VENDOR
 
 extract "$MY_DIR"/proprietary-files.txt "$SRC" \
-    "${KANG}" --section "${SECTION}"
-extract "$MY_DIR"/proprietary-files-fm.txt "$SRC" \
     "${KANG}" --section "${SECTION}"
 
 if [ -s "$MY_DIR"/../$DEVICE_SPECIFIED_COMMON/proprietary-files.txt ];then
