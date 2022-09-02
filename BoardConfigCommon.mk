@@ -101,6 +101,9 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 # CNE and DPM
 BOARD_USES_QCNE := true
 
+# Crypto
+TARGET_HW_DISK_ENCRYPTION := true
+
 # Display
 BOARD_USES_ADRENO := true
 
