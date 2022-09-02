@@ -30,14 +30,6 @@ write_headers "nx563j nx595j nx609j"
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
 
-printf "\n%s\n" "ifeq (\$(BOARD_HAVE_QCOM_FM),true)" >> "${PRODUCTMK}"
-write_makefiles "${MY_DIR}/proprietary-files-fm.txt" true
-echo "endif" >> "${PRODUCTMK}"
-
-printf "\n%s\n" "ifeq (\$(BOARD_HAVE_IR),true)" >> "${PRODUCTMK}"
-write_makefiles "${MY_DIR}/proprietary-files-ir.txt" true
-echo "endif" >> "${PRODUCTMK}"
-
 # Finish
 write_footers
 
