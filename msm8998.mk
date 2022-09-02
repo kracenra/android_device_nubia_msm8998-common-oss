@@ -268,6 +268,10 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
+# Ramdisk nubia customization
+PRODUCT_PACKAGES += \
+    init.nb.sensor.rc
+
 # IPv6
 PRODUCT_PACKAGES += \
     ebtables \
