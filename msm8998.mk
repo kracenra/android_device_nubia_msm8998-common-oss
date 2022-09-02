@@ -357,6 +357,10 @@ PRODUCT_PACKAGES += \
 # Verity
 $(call inherit-product, build/target/product/verity.mk)
 
+# VNDK
+PRODUCT_PACKAGES += \
+    libstdc++.vendor
+
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
