@@ -218,18 +218,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1
 
-# FM
-ifeq ($(BOARD_HAVE_QCOM_FM),true)
-PRODUCT_PACKAGES += \
-    FM2 \
-    libqcomfm_jni \
-    qcom.fmradio \
-    qcom.fmradio.xml
-
-PRODUCT_BOOT_JARS += \
-    qcom.fmradio
-endif
-
 # fwk-detect
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect \

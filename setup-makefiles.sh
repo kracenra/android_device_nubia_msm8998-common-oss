@@ -44,7 +44,7 @@ write_headers "nx563j nx595j nx609j"
 write_makefiles "$MY_DIR"/proprietary-files.txt true
 
 printf "\n%s\n" "ifeq (\$(BOARD_HAVE_QCOM_FM),true)" >> "$PRODUCTMK"
-write_makefiles "$MY_DIR"/proprietary-files-fm.txt true
+
 echo "endif" >> "$PRODUCTMK"
 
 # Finish
