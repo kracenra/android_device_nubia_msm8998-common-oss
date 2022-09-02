@@ -266,7 +266,8 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     init.recovery.qcom.rc \
     init.target.rc \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    fstab.qcom
 
 # Ramdisk nubia customization
 PRODUCT_PACKAGES += \
