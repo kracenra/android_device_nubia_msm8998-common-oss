@@ -17,8 +17,8 @@
 
 set -e
 
-DEVICE_COMMON=sdm660-common
-VENDOR=xiaomi
+DEVICE_COMMON=msm8998-common
+VENDOR=nubia
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"

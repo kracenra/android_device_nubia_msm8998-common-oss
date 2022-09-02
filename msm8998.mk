@@ -94,8 +94,8 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@2.0-service \
     android.hardware.soundtrigger@2.1-impl \
     audio.a2dp.default \
-    audio_amplifier.sdm660 \
-    audio.primary.sdm660 \
+    audio.primary.msm8998 \
+    audio.primary.msm8998 \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
@@ -191,9 +191,10 @@ PRODUCT_COPY_FILES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    gralloc.sdm660 \
-    hwcomposer.sdm660 \
-    memtrack.sdm660 \
+    copybit.msm8998 \
+    gralloc.msm8998 \
+    hwcomposer.msm8998 \
+    memtrack.msm8998 \
     libdisplayconfig \
     liboverlay \
     libtinyxml \
@@ -441,7 +442,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
     android.hardware.thermal@1.0-service \
-    thermal.sdm660
+    thermal.msm8998
 
 # Trust
 PRODUCT_PACKAGES += \
@@ -481,4 +482,4 @@ PRODUCT_BOOT_JARS += \
     WfdCommon
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/xiaomi/sdm660-common/sdm660-common-vendor.mk)
+$(call inherit-product, vendor/nubia/msm8998-common/msm8998-common-vendor.mk)

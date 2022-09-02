@@ -17,10 +17,10 @@
 
 set -e
 
-DEVICE_COMMON=sdm660-common
-VENDOR=xiaomi
+DEVICE_COMMON=msm8998-common
+VENDOR=nubia
 
-INITIAL_COPYRIGHT_YEAR=2018
+INITIAL_COPYRIGHT_YEAR=2022
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -66,7 +66,7 @@ if [ -s "$MY_DIR"/../$DEVICE_SPECIFIED_COMMON/proprietary-files.txt ]; then
     # We are done!
     write_footers
 
-    DEVICE_COMMON=sdm660-common
+    DEVICE_COMMON=msm8998-common
 fi
 
 if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then

@@ -22,17 +22,17 @@
 # definition file).
 #
 
-COMMON_PATH := device/xiaomi/sdm660-common
+COMMON_PATH := device/nubia/msm8998-common
 
-BOARD_VENDOR := xiaomi
+BOARD_VENDOR := nubia
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := sdm660
+TARGET_BOOTLOADER_BOARD_NAME := msm8998
 TARGET_NO_BOOTLOADER := true
 
 # Platform
-TARGET_BOARD_PLATFORM := sdm660
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno512
+TARGET_BOARD_PLATFORM := msm8998
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno540
 
 # Architecture
 TARGET_ARCH := arm64
@@ -62,7 +62,7 @@ BOARD_RAMDISK_OFFSET     := 0x02000000
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm660
+TARGET_KERNEL_SOURCE := kernel/nubia/sdm835
 TARGET_KERNEL_CLANG_COMPILE := true
 
 # QCOM hardware
@@ -207,5 +207,5 @@ WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
-# Inherit the proprietary files
-include vendor/xiaomi/sdm660-common/BoardConfigVendor.mk
+# inherit from the proprietary version
+-include vendor/nubia/msm8998-common/BoardConfigVendor.mk
