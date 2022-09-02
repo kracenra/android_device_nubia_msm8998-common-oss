@@ -134,9 +134,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.dbg.ims_volte_enable=1 \
+    persist.radio.videopause.mode=1 \
+    persist.data.iwlan.enable=true \
     persist.dbg.volte_avail_ovr=1 \
-    persist.dbg.vt_avail_ovr=1  \
-    persist.dbg.wfc_avail_ovr=1
+    persist.dbg.vt_avail_ovr=1 \
+    persist.radio.VT_HYBRID_ENABLE=1
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -162,25 +165,43 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so
 
-# Radio
+# RIL
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.radio.multisim.config=dsds \
-    persist.vendor.data.iwlan.enable=true \
-    persist.vendor.data.mode=concurrent \
-    persist.vendor.radio.apm_sim_not_pwdn=1 \
-    persist.vendor.radio.atfwd.start=true \
-    persist.vendor.radio.custom_ecc=1 \
-    persist.vendor.radio.data_con_rprt=1 \
-    persist.vendor.radio.rat_on=combine \
-    persist.vendor.radio.sib16_support=1 \
-    ro.telephony.default_network=22,22 \
-    ro.vendor.use_data_netmgrd=true
+    rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
+    vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
+    persist.rild.nitz_plmn="" \
+    persist.rild.nitz_long_ons_0="" \
+    persist.rild.nitz_long_ons_1="" \
+    persist.rild.nitz_long_ons_2="" \
+    persist.rild.nitz_long_ons_3="" \
+    persist.rild.nitz_short_ons_0="" \
+    persist.rild.nitz_short_ons_1="" \
+    persist.rild.nitz_short_ons_2="" \
+    persist.rild.nitz_short_ons_3=""
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    DEVICE_PROVISIONED=1 \
-    persist.sys.fflag.override.settings_network_and_internet_v2=true \
+PRODUCT_PROPERTY_OVERRIDES += \
     ril.subscription.types=NV,RUIM \
-    telephony.lteOnCdmaDevice=1
+    DEVICE_PROVISIONED=1 \
+    ro.telephony.default_network=22,22 \
+    telephony.lteOnCdmaDevice=1 \
+    keyguard.no_require_sim=true \
+    ro.com.android.dataroaming=true \
+    ro.telephony.default_cdma_sub=0 \
+    ro.telephony.default_ca_state=1 \
+    persist.vendor.radio.sib16_support=1 \
+    persist.vendor.radio.custom_ecc=0 \
+    persist.vendor.radio.rat_on=combine \
+    persist.vendor.radio.apm_sim_not_pwdn=1 \
+    persist.radio.multisim.config=dsds \
+    persist.vendor.ssr.restart_level=3 \
+    persist.vendor.ap.restart_level=0 \
+    persist.regional.wipedata.level=all \
+    persist.radio.sw_mbn_update=0 \
+    persist.radio.hw_mbn_update=0 \
+    persist.radio.trigger.silence=true \
+    persist.device.type=omt \
+    persist.activate_mbn.enabled=false \
+    ro.regionalization.support=true
 
 # Sensor
 PRODUCT_PROPERTY_OVERRIDES += \
