@@ -106,15 +106,18 @@
         <device name="SND_DEVICE_OUT_SPEAKER_AND_LINE" backend="speaker-and-headphones" interface="SLIMBUS_0_RX-and-SLIMBUS_6_RX"/>
         <device name="SND_DEVICE_OUT_SPEAKER_AND_ANC_HEADSET" backend="speaker-and-headphones" interface="SLIMBUS_0_RX-and-SLIMBUS_6_RX"/>
         <device name="SND_DEVICE_OUT_SPEAKER_AND_ANC_FB_HEADSET" backend="speaker-and-headphones" interface="SLIMBUS_0_RX-and-SLIMBUS_6_RX"/>
-        <device name="SND_DEVICE_OUT_VOICE_SPEAKER" interface="PRI_MI2S_RX-and-SLIMBUS_0_RX"/>
+        <device name="SND_DEVICE_OUT_VOICE_SPEAKER" backend="speaker" interface="PRI_MI2S_RX-and-SLIMBUS_0_RX"/>
         <device name="SND_DEVICE_OUT_VOICE_HEADPHONES" backend="headphones" interface="SLIMBUS_0_RX-and-SLIMBUS_6_RX"/>
         <device name="SND_DEVICE_OUT_VOICE_ANC_HEADSET" backend="headphones" interface="SLIMBUS_6_RX"/>
         <device name="SND_DEVICE_OUT_VOICE_ANC_FB_HEADSET" backend="headphones" interface="SLIMBUS_6_RX"/>
         <device name="SND_DEVICE_OUT_VOICE_LINE" backend="headphones" interface="SLIMBUS_6_RX"/>
         <device name="SND_DEVICE_OUT_VOICE_TTY_FULL_HEADPHONES" backend="headphones" interface="SLIMBUS_6_RX"/>
         <device name="SND_DEVICE_OUT_VOICE_TTY_VCO_HEADPHONES" backend="headphones" interface="SLIMBUS_6_RX"/>
+
+        <device name="SND_DEVICE_OUT_HANDSET" backend="handset" />
         <device name="SND_DEVICE_OUT_SPEAKER_AND_BT_SCO" backend="speaker-and-bt-sco" interface="PRI_MI2S_RX-and-SLIMBUS_7_RX"/>
         <device name="SND_DEVICE_OUT_SPEAKER_AND_BT_SCO_WB" backend="speaker-and-bt-sco-wb" interface="PRI_MI2S_RX-and-SLIMBUS_7_RX"/>
+        <device name="SND_DEVICE_OUT_VOICE_SPEAKER_2" backend="speaker"/>
     </backend_names>
     <!-- below values are for ref purpose to OEM, doesn't contain actual hardware info on MTP -->
     <microphone_characteristics>
