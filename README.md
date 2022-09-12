@@ -4,7 +4,7 @@ This repository contains common device configuration for Nubia msm8998-based dev
 
 ```
 #
-# Copyright (C) 2018 The LineageOS Project
+# Copyright (C) 2018 The MoKee Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

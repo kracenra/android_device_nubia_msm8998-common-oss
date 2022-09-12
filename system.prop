@@ -15,4 +15,4 @@
 #
 
 # Camera
-vendor.camera.aux.packagelist=com.android.camera,org.lineageos.snap
+vendor.camera.aux.packagelist=com.android.camera,org.mokee.snap
