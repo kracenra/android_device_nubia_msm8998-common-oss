@@ -1,2 +1,10 @@
 [
+ {
+   "repository": "android_vendor_nubia_msm8998-common",
+   "target_path": "vendor/nubia/msm8998-common"
+ },
+ {
+   "repository": "android_kernel_nubia_msm8998",
+   "target_path": "kernel/nubia/msm8998"
+ }
 ]
