@@ -44,6 +44,7 @@ TARGET_KERNEL_SOURCE := kernel/nubia/msm8998
 
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
+TARGET_KERNEL_LLVM_BINUTILS := false
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
