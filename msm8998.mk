@@ -247,9 +247,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl
 
 # LiveDisplay native
-#PRODUCT_PACKAGES += \
-#    vendor.lineage.livedisplay@2.0-service-sdm \
-#    vendor.lineage.livedisplay@2.0-service-sysfs
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.0-service-sdm \
+    vendor.lineage.livedisplay@2.0-service-sysfs
 
 # Media
 PRODUCT_COPY_FILES += \
