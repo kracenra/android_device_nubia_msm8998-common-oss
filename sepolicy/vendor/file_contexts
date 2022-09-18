@@ -1,5 +1,4 @@
 # Biometric
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.xiaomi_sdm660   u:object_r:hal_fingerprint_sdm660_exec:s0
 
 # Fingerprint
 /data/gf_data(/.*)?                             u:object_r:fingerprintd_data_file:s0
@@ -20,15 +19,6 @@
 # IR
 /dev/lirc0                                      u:object_r:spidev_device:s0
 /dev/spidev7.1                                  u:object_r:spidev_device:s0
-
-# IR HAL
-/(vendor|system/vendor)/bin/hw/android\.hardware\.ir@1\.0-service\.xiaomi_sdm660                        u:object_r:hal_ir_default_exec:s0
-
-# Light HAL
-/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.xiaomi_sdm660                     u:object_r:hal_light_default_exec:s0
-
-# Mlipay
-/(vendor|system/vendor)/bin/mlipayd@1.1         u:object_r:hal_mlipay_default_exec:s0
 
 # Root files
 /persist(/.*)?                                  u:object_r:mnt_vendor_file:s0
