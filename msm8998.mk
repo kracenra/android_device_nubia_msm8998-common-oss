@@ -113,6 +113,7 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0-impl:32 \
+    audio.bluetooth.default \
     vendor.qti.hardware.btconfigstore@1.0.vendor
 
 # Camera
