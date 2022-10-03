@@ -280,8 +280,7 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     init.recovery.qcom.rc \
     init.target.rc \
-    ueventd.qcom.rc \
-    fstab.qcom
+    ueventd.qcom.rc
 
 PRODUCT_PACKAGES += \
     init.nb.sensor.rc
