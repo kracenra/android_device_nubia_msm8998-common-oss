@@ -144,13 +144,11 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 
 # Display
 PRODUCT_PACKAGES += \
-    copybit.msm8998 \
     gralloc.msm8998 \
     hwcomposer.msm8998 \
     memtrack.msm8998 \
     libdisplayconfig \
     libtinyxml \
-    libtinyxml.vendor \
     libqdMetaData \
     libqdMetaData.system
 
@@ -165,8 +163,7 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-service \
     android.hardware.renderscript@1.0-impl \
     android.frameworks.displayservice@1.0 \
-    vendor.display.config@1.1 \
-    vendor.display.config@1.1_vendor
+    vendor.display.config@1.1
 
 # DPM
 PRODUCT_PACKAGES += \
@@ -178,7 +175,6 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.4-service.clearkey \
     android.hardware.drm@1.1.vendor
-
 
 # Fingerprint feature
 PRODUCT_PACKAGES += \
@@ -268,7 +264,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0.vendor
 
-
 # LiveDisplay native
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-sdm \
@@ -332,8 +327,7 @@ PRODUCT_COPY_FILES += \
 
 # QMI
 PRODUCT_PACKAGES += \
-    libjson \
-    libjson.vendor
+    libjson
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
@@ -346,7 +340,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.deprecated@1.0.vendor \
     android.hardware.secure_element@1.0 \
     android.hardware.secure_element@1.0.vendor \
-    CarrierConfigOverlay \
     libril-wrapper \
     librmnetctl
 
@@ -378,8 +371,7 @@ PRODUCT_PACKAGES += \
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
-    android.hardware.thermal@1.0-service \
-    thermal.msm8998
+    android.hardware.thermal@1.0-service
 
 # Trust
 PRODUCT_PACKAGES += \
