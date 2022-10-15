@@ -262,8 +262,7 @@ vendor/lib64/libqmi_client_qmux.so
 vendor/lib64/libqmi_common_so.so
 vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
-vendor/lib64/libqmiservices.so|2b540e3da7a167346205813801d1cf7239759b1f
-
+vendor/lib64/libqmiservices.so
 # RIL - from jasmine V11.0.15.0.QDIMIXM
 product/etc/permissions/qcrilhook.xml:system_ext/etc/permissions/qcrilhook.xml|ceb890ab3c1645aa0d0044abab1ba58c4097a991|4e58dc0e3d4391451fc67ad0d5e9ee5943631e54
 product/framework/qcrilhook.jar:system_ext/framework/qcrilhook.jar|4eece9eb40a8976d2fd9a6a4d5d6dfea0c7674f5
@@ -300,7 +299,7 @@ vendor/lib64/libqcmaputils.so
 vendor/lib64/libqsocket.so
 vendor/lib64/libqrtr.so
 vendor/lib64/libril-qc-ltedirectdisc.so
-vendor/lib64/libril-qc-qmi-1.so|c8fcab4f04e37870a53b6b34222df4481539c5f5
+vendor/lib64/libril-qc-qmi-1.so
 vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
 vendor/lib64/librilqmiservices.so
