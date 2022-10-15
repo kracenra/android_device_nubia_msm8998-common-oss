@@ -307,6 +307,8 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     CarrierConfigOverlay \
+    android.hardware.radio.config@1.1 \
+    android.hardware.radio@1.1 \
     librmnetctl
 
 PRODUCT_PACKAGES += \
