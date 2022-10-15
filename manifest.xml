@@ -354,7 +354,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>slot2</instance>
         </interface>
     </hal>
-        <hal format="hidl">
+<!--        <hal format="hidl">
         <name>android.hardware.secure_element</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -365,7 +365,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
         <fqname>@1.0::ISecureElement/SIM1</fqname>
         <fqname>@1.0::ISecureElement/SIM2</fqname>
-    </hal>
+    </hal>-->
     <hal format="hidl">
         <name>com.qualcomm.qti.dpm.api</name>
         <transport>hwbinder</transport>
