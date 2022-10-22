@@ -163,9 +163,10 @@ PRODUCT_PACKAGES += \
     com.quicinc.cne \
     services-ext
 
-# Configstore
+# Camera shim
 PRODUCT_PACKAGES += \
-    android.hardware.configstore@1.0-service
+    libNubiaImageAlgorithmShim \
+    libfui
 
 # Consumerir
 PRODUCT_PACKAGES += \
