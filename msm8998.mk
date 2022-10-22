@@ -130,6 +130,11 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.5:64 \
     vendor.qti.hardware.camera.device@1.0:64
 
+# Camera shim
+PRODUCT_PACKAGES += \
+    libNubiaImageAlgorithmShim \
+    libfui
+
 # Component overrides
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
