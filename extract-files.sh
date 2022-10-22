@@ -87,6 +87,8 @@ if [ -z "${ONLY_TARGET}" ] && [ -z "${ONLY_DEVICE_COMMON}" ]; then
 
     extract "${MY_DIR}/proprietary-files.txt" "${SRC}" ${KANG} --section "${SECTION}"
 
+	extract "${MY_DIR}/proprietary-files-nfc.txt" "${SRC}" ${KANG} --section "${SECTION}"
+
 	extract "${MY_DIR}/proprietary-files-ir.txt" "${SRC}" ${KANG} --section "${SECTION}"
 fi
 
