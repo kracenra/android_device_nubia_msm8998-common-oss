@@ -104,6 +104,10 @@ ifeq ($(BOARD_HAVE_NUBIA_IR),true)
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest-ir.xml
 endif
 
+ifeq ($(BOARD_HAVE_NUBIA_NFC),true)
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest-nfc.xml
+endif
+
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
