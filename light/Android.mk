@@ -16,6 +16,13 @@ LOCAL_SHARED_LIBRARIES := \
     libhidlbase \
     libutils \
     android.hardware.light@2.0
+    
+# define led type for light 2.0 hidl service
+ifeq ($(BOARD_HAVE_NUBIA_HOME_LED),true)
+    LOCAL_CFLAGS += -DHOME_LED
+else ifeq ($(BOARD_HAVE_NUBIA_TOP_LED),true)
+    LOCAL_CFLAGS += -DTOP_LED
+endif
 
 include $(BUILD_EXECUTABLE)
 
