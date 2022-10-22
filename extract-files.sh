@@ -64,13 +64,15 @@ setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true $CLEAN_VENDOR
 
 extract "$MY_DIR"/proprietary-files.txt "$SRC" \
     "${KANG}" --section "${SECTION}"
+extract "$MY_DIR"/proprietary-files-nubia.txt "$SRC" \
+    "${KANG}" --section "${SECTION}"
 extract "$MY_DIR"/proprietary-files-nfc.txt "$SRC" \
     "${KANG}" --section "${SECTION}"
 extract "$MY_DIR"/proprietary-files-ir.txt "$SRC" \
     "${KANG}" --section "${SECTION}"
 
 if [ -s "$MY_DIR"/../$DEVICE_SPECIFIED_COMMON/proprietary-files.txt ];then
-    # Reinitialize the helper for device specified common
+    # Reinitialize the helper for device specified qcom-common
     setup_vendor "$DEVICE_SPECIFIED_COMMON" "$VENDOR" "$LINEAGE_ROOT" false "$CLEAN_VENDOR"
     extract "$MY_DIR"/../$DEVICE_SPECIFIED_COMMON/proprietary-files.txt "$SRC" \
     "${KANG}" --section "${SECTION}"
