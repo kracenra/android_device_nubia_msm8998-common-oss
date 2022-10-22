@@ -250,9 +250,54 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
-# Ramdisk nubia customization
 PRODUCT_PACKAGES += \
     init.nb.sensor.rc
+    
+# Init (for nubia common)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init/init.nb.common.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nb.common.rc
+    
+# Init (for back led)
+ifeq ($(BOARD_HAVE_NUBIA_BACK_LED),true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init/init.nb.multicolor.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nb.multicolor.rc
+endif
+
+# Init (for fingerprint)
+ifeq ($(BOARD_HAVE_NUBIA_FPC_FINGERPRINT),true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init/init.nb.fpc.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nb.fpc.rc
+else ifeq ($(BOARD_HAVE_NUBIA_GOODIX_FINGERPRINT),true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init/init.nb.goodix.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nb.goodix.rc
+endif
+
+# Init (for ir)
+ifeq ($(BOARD_HAVE_NUBIA_IR),true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init/init.nb.ir.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nb.ir.rc
+endif
+
+# Init (for nfc)
+ifeq ($(BOARD_HAVE_NUBIA_NFC),true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init/init.nb.nfc.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nb.nfc.rc
+endif
+
+# Init (for touch)
+ifeq ($(BOARD_HAVE_NUBIA_INPUT1),true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init/init.nb.iput1.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nb.iput1.rc
+else ifeq ($(BOARD_HAVE_NUBIA_INPUT4),true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init/init.nb.iput4.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nb.iput4.rc
+endif
+
+# Init (for nubia drv2605 vibrator)
+ifeq ($(BOARD_HAVE_NUBIA_VIBRATOR),true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init/init.nb.vibrator.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nb.vibrator.rc
+endif
 
 # Init (for root system)
 ifeq ($(BOARD_WITH_ROOT_SYSTEM),true)
