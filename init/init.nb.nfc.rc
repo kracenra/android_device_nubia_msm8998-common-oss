@@ -1,0 +1,12 @@
+# Copyright (c) 2022, LineageOS. All rights reserved.
+#
+# init.nb.nfc.rc
+
+on boot
+
+# nfc (bcm2079x)
+    chmod 777 /dev/bcm2079x
+    chown nfc nfc /dev/bcm2079x
+    mkdir /data/nfc 770 nfc nfc
+    mkdir /data/vendor/nfc 770 nfc nfc
+    setprop ro.hardware.nfc_nci bcm2079x.default
