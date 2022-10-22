@@ -468,6 +468,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
 
+# Touch
+ifeq ($(BOARD_HAVE_NUBIA_HOME_LED),true)
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.nubia
+endif
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
