@@ -23,18 +23,23 @@
 #include <fstream>
 
 #define LCD_LED         "/sys/class/leds/lcd-backlight/brightness"
-
 #define LED_IN_MODE_BLINK    "/sys/class/leds/nubia_led/blink_mode"
 #define LED_IN_SWITCH        "/sys/class/leds/nubia_led/outn"
 #define LED_IN_GRADE_PARA    "/sys/class/leds/nubia_led/grade_parameter"
 #define LED_IN_FADE_PARA     "/sys/class/leds/nubia_led/fade_parameter"
+#define BATTERY_STATUS_FILE       "/sys/class/power_supply/battery/status"
+#define BATTERY_CAPACITY          "/sys/class/power_supply/battery/capacity"
+#define BATTERY_STATUS_DISCHARGING  "Discharging"
+#define BATTERY_STATUS_NOT_CHARGING "Not charging"
+#define BATTERY_STATUS_CHARGING     "Charging"
 
+#ifdef HOME_LED
+/* start define home led */
 #define BLINK_MODE_ON			1
 #define BLINK_MODE_OFF			2
 #define BLINK_MODE_BREATH		3
 #define BLINK_MODE_BREATH_ONCE	6
 #define BLINK_MODE_UNKNOWN		0xff
-
 #define LED_CHANNEL_HOME	16
 #define LED_CHANNEL_BUTTON	8
 #define LED_GRADE_BUTTON			8
@@ -42,6 +47,19 @@
 #define LED_GRADE_HOME_BATTERY_LOW	0
 #define LED_GRADE_HOME_NOTIFICATION	6
 #define LED_GRADE_HOME_BATTERY		6
+/* start define home led */
+#endif
+
+#ifdef TOP_LED
+/* start define top led */
+#define BLINK_MODE_ON    3
+#define BLINK_MODE_OFF   0
+#define BLINK_MODE_CONST 1
+#define NUBIA_LED_DISABLE 16
+#define NUBIA_LED_RED     48
+#define NUBIA_LED_GREEN   64
+/* start define top led */
+#endif
 
 #define BREATH_SOURCE_NOTIFICATION	0x01
 #define BREATH_SOURCE_BATTERY		0x02
@@ -52,6 +70,17 @@
 #define MAX_LED_BRIGHTNESS    255
 #define MAX_LCD_BRIGHTNESS    4095
 
+static int32_t active_status = 0;
+
+enum battery_status {
+    BATTERY_UNKNOWN = 0,
+    BATTERY_LOW,
+    BATTERY_FREE,
+    BATTERY_CHARGING,
+    BATTERY_FULL,
+};
+#ifdef HOME_LED
+/* start define home led */
 struct led_data
 {
 	int status;
@@ -61,10 +90,10 @@ struct led_data
 	int fade_off_time;
 };
 
-static int32_t active_status = 0;
-
 static struct led_data current_home_led_status = {BLINK_MODE_UNKNOWN, -1, -1, -1, -1};		//status=BLINK_MODE_UNKNOWN, force write data on boot
 static struct led_data current_button_led_status = {BLINK_MODE_UNKNOWN, -1, -1, -1, -1};		//status=BLINK_MODE_UNKNOWN, force write data on boot
+/* start define home led */
+#endif
 
 namespace {
 /*
@@ -79,6 +108,34 @@ static void set(std::string path, std::string value) {
     }
 
     file << value;
+}
+
+static int get(std::string path) {
+    std::ifstream file(path);
+    int value;
+
+    if (!file.is_open()) {
+        ALOGW("failed to read from %s", path.c_str());
+        return 0;
+    }
+
+    file >> value;
+    return value;
+}
+
+static int readStr(std::string path, char *buffer, size_t size)
+{
+
+    std::ifstream file(path);
+
+    if (!file.is_open()) {
+        ALOGW("failed to read %s", path.c_str());
+        return -1;
+    }
+
+    file.read(buffer, size);
+    file.close();
+    return 1;
 }
 
 static void set(std::string path, int value) {
@@ -108,6 +165,40 @@ static uint32_t getBrightness(const LightState& state) {
     return (77 * red + 150 * green + 29 * blue) >> 8;
 }
 
+int getBatteryStatus()
+{
+    int err;
+
+    char status_str[16];
+    int capacity = 0;
+
+    err = readStr(BATTERY_STATUS_FILE, status_str, sizeof(status_str));
+    if (err <= 0) {
+        ALOGI("failed to read battery status: %d", err);
+        return BATTERY_UNKNOWN;
+    }
+
+    //ALOGI("battery status: %d, %s", err, status_str);
+
+    capacity = get(BATTERY_CAPACITY);
+
+    //ALOGI("battery capacity: %d", capacity);
+
+    if (0 == strncmp(status_str, BATTERY_STATUS_CHARGING, 8)) {
+        if (capacity < 90) {
+            return BATTERY_CHARGING;
+        } else {
+            return BATTERY_FULL;
+        }
+    } else {
+        if (capacity < 10) {
+            return BATTERY_LOW;
+        } else {
+            return BATTERY_FREE;
+        }
+    }
+}
+
 static inline uint32_t scaleBrightness(uint32_t brightness, uint32_t maxBrightness) {
     return brightness * maxBrightness / 0xFF;
 }
@@ -121,6 +212,8 @@ static void handleBacklight(const LightState& state) {
     set(LCD_LED, brightness);
 }
 
+#ifdef HOME_LED
+/* start define home led */
 inline int get_max(int a, int b)
 {
 	return a > b ? a : b;
@@ -258,11 +351,17 @@ static void set_led_button_status(struct led_data *mode)
 		copy_led_status(&current_button_led_status, mode, true);
 	}
 }
+/* start define home led */
+#endif
 
 static uint32_t setBreathLightLocked(uint32_t event_source, const LightState& state){
     uint32_t brightness = getScaledBrightness(state, MAX_LED_BRIGHTNESS);
+#ifdef HOME_LED
+/* start define home led */
     struct led_data home_status = {BLINK_MODE_OFF, -1, -1, -1, -1};
     struct led_data button_status = {BLINK_MODE_OFF, -1, -1, -1, -1};
+/* start define home led */
+#endif
 
     if (brightness > 0) {
         active_status |= event_source;
@@ -270,13 +369,35 @@ static uint32_t setBreathLightLocked(uint32_t event_source, const LightState& st
         active_status &= ~event_source;
     }
 
+#ifdef HOME_LED
+/* start define home led */
     if(active_status == 0) //nothing, close all
     {
         set_led_home_status(&home_status);
         set_led_button_status(&button_status);
+/* start define home led */
+#endif
 
+#ifdef TOP_LED
+/* start define top led */
+    if(active_status == 0) { //nothing, close all
+        // disable green led
+        set(LED_IN_SWITCH, NUBIA_LED_GREEN);
+        set(LED_IN_MODE_BLINK, BLINK_MODE_OFF);
+        // disable red led
+        set(LED_IN_SWITCH, NUBIA_LED_RED);
+        set(LED_IN_MODE_BLINK, BLINK_MODE_OFF);
+        // set disable led
+        set(LED_IN_SWITCH, NUBIA_LED_DISABLE);
+        set(LED_IN_MODE_BLINK, BLINK_MODE_OFF);
+        set(LED_IN_FADE_PARA, "0 0 0");
+        set(LED_IN_GRADE_PARA, "100 255");
+/* start define top led */
+#endif
         return 0;
     }
+#ifdef HOME_LED
+/* start define home led */
     if(active_status & BREATH_SOURCE_BUTTONS) //button backlight, turn all on
     {
         home_status.status = BLINK_MODE_ON;
@@ -308,6 +429,81 @@ static uint32_t setBreathLightLocked(uint32_t event_source, const LightState& st
 
     set_led_home_status(&home_status);
     set_led_button_status(&button_status);
+/* start define home led */
+#endif
+
+#ifdef TOP_LED
+/* start define top led */
+    if(active_status & BREATH_SOURCE_BATTERY) { //battery status
+	    int battery_state = getBatteryStatus();
+	    if(battery_state == BATTERY_CHARGING || battery_state == BATTERY_LOW){
+            set(LED_IN_SWITCH, NUBIA_LED_RED);
+            set(LED_IN_FADE_PARA, "0 0 0");
+            set(LED_IN_GRADE_PARA, "100 255");
+            set(LED_IN_MODE_BLINK, BLINK_MODE_CONST);
+        }else if (battery_state == BATTERY_FULL){
+            set(LED_IN_SWITCH, NUBIA_LED_GREEN);
+            set(LED_IN_FADE_PARA, "0 0 0");
+            set(LED_IN_GRADE_PARA, "100 255");
+            set(LED_IN_MODE_BLINK, BLINK_MODE_CONST);
+        }
+
+        return 0;
+    }
+
+    if( (active_status & BREATH_SOURCE_NOTIFICATION ) || (active_status & BREATH_SOURCE_ATTENTION)) { //notification, set home breath
+        int32_t onMS = state.flashOnMs;
+        int32_t offMS = state.flashOffMs;
+        switch(onMS){
+        case 5000:
+            onMS = 5;
+            break;
+        case 2000:
+            onMS = 4;
+            break;
+        case 1000:
+            onMS = 3;
+            break;
+        case 500:
+            onMS = 2;
+            break;
+        case 250:
+            onMS = 1;
+            break;
+        default:
+            onMS = 1;
+        }
+
+        switch(offMS){
+        case 5000:
+            offMS = 5;
+            break;
+        case 2000:
+            offMS = 4;
+            break;
+        case 1000:
+            offMS = 3;
+            break;
+        case 500:
+            offMS = 2;
+            break;
+        case 250:
+            offMS = 1;
+            break;
+        case 1:
+            offMS = 0;
+            break;
+        default:
+            offMS = 0;
+        }
+        std::string fade_params = std::to_string(offMS) + " " + std::to_string(onMS) + " " + std::to_string(onMS);
+        set(LED_IN_SWITCH, NUBIA_LED_GREEN);
+        set(LED_IN_FADE_PARA, fade_params);
+        set(LED_IN_GRADE_PARA, "0 100");
+        set(LED_IN_MODE_BLINK, BLINK_MODE_ON);
+    }
+/* start define top led */
+#endif
     return 0;
 }
 
@@ -315,10 +511,13 @@ static inline bool isLit(const LightState& state) {
     return state.color & 0x00ffffff;
 }
 
+#ifdef HOME_LED
+/* start define home led */
 static void handleButtons(const LightState& state) {
     setBreathLightLocked(BREATH_SOURCE_BUTTONS, state);
 }
-
+/* start define home led */
+#endif
 
 static void handleNotification(const LightState& state) {
     setBreathLightLocked(BREATH_SOURCE_NOTIFICATION, state);
@@ -334,7 +533,11 @@ static std::vector<LightBackend> backends = {
     { Type::NOTIFICATIONS, handleNotification },
     { Type::BATTERY, handleBattery },
     { Type::BACKLIGHT, handleBacklight },
+#ifdef HOME_LED
+/* start define home led */
     { Type::BUTTONS, handleButtons },
+/* start define home led */
+#endif	
 };
 
 }  // anonymous namespace
