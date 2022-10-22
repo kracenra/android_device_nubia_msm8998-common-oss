@@ -270,7 +270,16 @@ PRODUCT_PACKAGES += \
 # Ramdisk nubia customization
 PRODUCT_PACKAGES += \
     init.nb.sensor.rc
-    
+
+# Init (for root system)
+ifeq ($(BOARD_WITH_ROOT_SYSTEM),true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/fstab.qcom.sar:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.qcom
+else
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/fstab.qcom:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.qcom
+endif
+
 # IMS
 PRODUCT_PACKAGES += \
     ims-ext-common \
