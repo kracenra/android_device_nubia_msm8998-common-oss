@@ -1,0 +1,50 @@
+# Copyright (c) 2016, nubia. All rights reserved.
+#
+# init.nb.input4.rc
+# For all nubia projects defined in device/zte
+
+on post-fs-data
+
+# tp and lcd node (input4)
+    chown system system /sys/class/touch/tpnode/synaptics/0dbutton
+    chown system system /sys/class/touch/tpnode/synaptics/ic_ver
+    symlink /sys/class/touch/tpnode/synaptics/ic_ver /data/vendor/tp/ic_ver
+    chown system system /sys/class/touch/tpnode/synaptics/reset
+    symlink /sys/class/touch/tpnode/synaptics/reset /data/vendor/tp/reset
+    chown system system /sys/class/touch/tpnode/synaptics/device/ic_detect
+    symlink /sys/class/touch/tpnode/synaptics/device/ic_detect /data/vendor/tp/ic_detect
+	
+    symlink /sys/class/touch/tpnode/synaptics/device/start_update /data/vendor/tp/start_update
+    chown system system /sys/class/touch/tpnode/synaptics/wake_gesture
+    symlink /sys/class/touch/tpnode/synaptics/wake_gesture /data/vendor/tp/easy_wakeup_gesture
+    chown system system /sys/class/touch/tpnode/synaptics/palm_sleep
+    symlink /sys/class/touch/tpnode/synaptics/palm_sleep /data/vendor/tp/easy_sleep_palm
+    write /sys/class/touch/tpnode/synaptics/start_update 1
+    chown system system /sys/kernel/lcd_enhance/colortmp
+    chown system system /sys/kernel/lcd_enhance/saturation
+    chown system system /sys/kernel/lcd_enhance/cabc
+    chown system system /sys/kernel/lcd_enhance/lcd_power_on
+    chown system system /sys/kernel/lcd_enhance/lcd_power_off
+    chown system system /sys/class/touch/tpnode/synaptics/f54/read_rt2
+    chown system system /sys/class/touch/tpnode/synaptics/f54/read_rt3
+    chown system system /sys/class/touch/tpnode/synaptics/remap
+    symlink /sys/class/touch/tpnode/synaptics/f54/read_rt2 /data/vendor/tp/read_rt2
+    symlink /sys/class/touch/tpnode/synaptics/f54/read_rt3 /data/vendor/tp/read_rt3
+    chown system system /sys/class/touch/tpnode/synaptics/device/start_user_update
+    symlink /sys/class/touch/tpnode/synaptics/device/start_user_update /data/vendor/tp/start_user_update
+    write /sys/class/touch/tpnode/synaptics/remap 18
+
+on property:persist.gesture.swapbuttons=*
+    write /sys/class/touch/tpnode/synaptics/swap_buttons ${persist.gesture.swapbuttons}
+
+on property:persist.gesture.palmsleep=*
+    write /sys/class/touch/tpnode/synaptics/palm_sleep ${persist.gesture.palmsleep}
+
+on property:persist.gesture.edgeslop=*
+    write /sys/class/touch/tpnode/synaptics/remap ${persist.gesture.edgeslop}
+
+on property:sys.tp.wakeup=*
+    write /sys/class/touch/tpnode/synaptics/wake_gesture ${sys.tp.wakeup}
+
+on property:sys.tp.palmsleep=*
+    write /sys/class/touch/tpnode/synaptics/palm_sleep ${sys.tp.palmsleep}
