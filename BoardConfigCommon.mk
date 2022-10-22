@@ -138,6 +138,12 @@ TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
+# Recovery
+ifeq ($(BOARD_WITH_ROOT_SYSTEM),true)
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/recovery/recovery.fstab.sar
+else
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/recovery/recovery.fstab
+endif
 
 # RIL
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
