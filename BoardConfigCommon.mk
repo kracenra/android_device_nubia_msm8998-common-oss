@@ -167,6 +167,13 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/public
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
 
+# Tap-to-wake
+ifeq ($(BOARD_HAVE_NUBIA_INPUT1),true)
+TARGET_TAP_TO_WAKE_NODE := "/sys/class/input/input1/wake_gesture"
+else ifeq ($(BOARD_HAVE_NUBIA_INPUT4),true)
+TARGET_TAP_TO_WAKE_NODE := "/data/vendor/tp/easy_wakeup_gesture"
+endif
+
 # Treble
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 BOARD_VNDK_VERSION := current
