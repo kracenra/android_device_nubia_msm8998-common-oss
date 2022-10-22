@@ -16,7 +16,7 @@
 #
 
 set -e
-
+SRC=~/
 DEVICE_COMMON=msm8998-common
 VENDOR=nubia
 
@@ -42,10 +42,6 @@ setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true
 write_headers "nx563j nx595j nx609j"
 
 write_makefiles "$MY_DIR"/proprietary-files.txt true
-
-printf "\n%s\n" "ifeq (\$(BOARD_HAVE_QCOM_FM),true)" >> "$PRODUCTMK"
-
-echo "endif" >> "$PRODUCTMK"
 
 printf "\n%s" >> "$PRODUCTMK"
 write_makefiles "$MY_DIR"/proprietary-files-nubia.txt true

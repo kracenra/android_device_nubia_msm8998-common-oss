@@ -16,7 +16,7 @@
 #
 
 set -e
-
+SRC=~/
 DEVICE_COMMON=msm8998-common
 VENDOR=nubia
 
