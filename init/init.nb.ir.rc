@@ -1,0 +1,9 @@
+# Copyright (c) 2022, LineageOS. All rights reserved.
+#
+# init.nb.ir.rc
+
+on boot
+
+# ir
+    chown system system /sys/class/ir_remote/ir_remote/enable
+    chmod 0644 /sys/class/ir_remote/ir_remote/enable
