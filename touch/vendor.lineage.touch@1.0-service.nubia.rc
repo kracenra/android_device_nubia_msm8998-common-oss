@@ -1,0 +1,8 @@
+on init
+    chown system system /sys/class/touch/tpnode/synaptics/0dbutton
+    chmod 0660 /sys/class/touch/tpnode/synaptics/0dbutton
+
+service vendor.touch-hal-1-0 /vendor/bin/hw/vendor.lineage.touch@1.0-service.nubia
+    class hal
+    user system
+    group system
