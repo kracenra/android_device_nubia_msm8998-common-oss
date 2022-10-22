@@ -1,0 +1,3 @@
+# NFC
+vendor/lib64/hw/nfc_nci.bcm2079x.default.so:vendor/lib64/hw/nfc_nci.bcm2079x.msm8998.so
+vendor/firmware/Generic_unsigned_1021_1.ncd
