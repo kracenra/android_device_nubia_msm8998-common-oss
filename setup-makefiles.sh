@@ -47,6 +47,10 @@ printf "\n%s\n" "ifeq (\$(BOARD_HAVE_QCOM_FM),true)" >> "$PRODUCTMK"
 
 echo "endif" >> "$PRODUCTMK"
 
+printf "\n%s\n" "ifeq (\$(BOARD_HAVE_NUBIA_NFC),true)" >> "$PRODUCTMK"
+write_makefiles "$MY_DIR"/proprietary-files-nfc.txt true
+echo "endif" >> "$PRODUCTMK"
+
 printf "\n%s\n" "ifeq (\$(BOARD_HAVE_NUBIA_IR),true)" >> "$PRODUCTMK"
 write_makefiles "$MY_DIR"/proprietary-files-ir.txt true
 echo "endif" >> "$PRODUCTMK"

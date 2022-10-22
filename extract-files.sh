@@ -64,6 +64,8 @@ setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true $CLEAN_VENDOR
 
 extract "$MY_DIR"/proprietary-files.txt "$SRC" \
     "${KANG}" --section "${SECTION}"
+extract "$MY_DIR"/proprietary-files-nfc.txt "$SRC" \
+    "${KANG}" --section "${SECTION}"
 extract "$MY_DIR"/proprietary-files-ir.txt "$SRC" \
     "${KANG}" --section "${SECTION}"
 
