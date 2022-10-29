@@ -380,7 +380,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/nfcee_access.xml:$(TARGET_COPY_OUT_VENDOR)/etc/nfcee_access.xml
 
 PRODUCT_PACKAGES += \
-    libnfc \
     com.android.nfc_extras \
     NfcNci \
     Tag
