@@ -441,7 +441,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.deprecated@1.0.vendor \
     android.hardware.secure_element@1.0 \
     android.hardware.secure_element@1.0.vendor \
-    libril-wrapper \
     librmnetctl
 
 PRODUCT_PACKAGES += \
