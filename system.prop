@@ -19,3 +19,7 @@ vendor.camera.aux.packagelist=com.android.camera,org.lineageos.snap
 
 # DPM
 persist.vendor.dpm.feature=1
+
+# Radio
+ro.telephony.block_binder_thread_on_incoming_calls=false
+
