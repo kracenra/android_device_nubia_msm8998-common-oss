@@ -1,0 +1,39 @@
+# Copyright (c) 2022, LineageOS. All rights reserved.
+#
+# init.nb.radio.rc
+
+on boot
+    #Create PORT-BRIDGE daemon socket area
+    mkdir /dev/socket/port-bridge 0750 radio radio
+
+    #Create NETMGR daemon socket area
+    mkdir /dev/socket/netmgr 0750 radio radio
+
+# msm specific files that need to be created on /data
+on post-fs-data
+    #Create port-bridge log dir
+    mkdir /data/vendor/port_bridge 0770 radio radio
+    chmod 0770 /data/vendor/port_bridge
+
+    #create netmgr log dir
+    mkdir /data/vendor/netmgr 0770 radio radio
+    chmod 0770 /data/vendor/netmgr
+
+service vendor.port-bridge /system/vendor/bin/port-bridge
+    class main
+    user radio
+    group radio system inet
+    oneshot
+
+# NET Manager Daemon
+service vendor.netmgrd /vendor/bin/netmgrd
+    class main
+    group system wakelock
+    disabled
+    writepid /dev/cpuset/system-background/tasks
+
+on property:ro.boot.baseband=msm
+    enable vendor.netmgrd
+
+on property:ro.boot.baseband=sdm
+    enable vendor.netmgrd
