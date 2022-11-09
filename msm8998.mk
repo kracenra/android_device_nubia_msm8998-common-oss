@@ -261,7 +261,8 @@ PRODUCT_PACKAGES += \
     
 # Init (for nubia common)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init/init.nb.common.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nb.common.rc
+    $(LOCAL_PATH)/init/init.nb.common.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nb.common.rc \
+    $(LOCAL_PATH)/init/init.nb.radio.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nb.radio.rc
     
 # Init (for back led)
 ifeq ($(BOARD_HAVE_NUBIA_BACK_LED),true)
