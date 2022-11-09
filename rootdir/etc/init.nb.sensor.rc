@@ -11,4 +11,5 @@ import /vendor/etc/init/hw/init.nb.iput4.rc
 import /vendor/etc/init/hw/init.nb.ir.rc
 import /vendor/etc/init/hw/init.nb.multicolor.rc
 import /vendor/etc/init/hw/init.nb.nfc.rc
+import /vendor/etc/init/hw/init.nb.radio.rc
 import /vendor/etc/init/hw/init.nb.vibrator.rc
