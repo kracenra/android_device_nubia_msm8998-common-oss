@@ -185,8 +185,13 @@ PRODUCT_PACKAGES += \
 
 
 # Fingerprint feature
+ifeq ($(BOARD_HAVE_NUBIA_GOODIX_FINGERPRINT),true)
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1-service.nubia_msm8998
+else
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1
+endif
 
 # fwk-detect
 PRODUCT_PACKAGES += \
