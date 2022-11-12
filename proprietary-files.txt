@@ -141,10 +141,10 @@ vendor/lib64/libsdmextension.so|264c00a0920d291700b2948b9337037684986921
 vendor/lib64/libtinyxml2_1.so|ba981e332895a053a67fc54a8190365a3ad37f2d
 
 # IMS - from LA.UM.8.2.r1-05700-sdm660.0
-product/priv-app/ims/ims.apk:system_ext/priv-app/ims/ims.apk|bd32366296caf44cf2171a464b788004bed58156
+-product/priv-app/ims/ims.apk:system_ext/priv-app/ims/ims.apk|bd32366296caf44cf2171a464b788004bed58156
 product/lib64/libimscamera_jni.so:system_ext/lib64/libimscamera_jni.so|41fd9faa10818c9f7c5a14d372a07f79b0ca0daa
 product/lib64/libimsmedia_jni.so:system_ext/lib64/libimsmedia_jni.so|448795a73bbf72fc0c9876f86a13769139ea8022
-product/app/uceShimService/uceShimService.apk:system_ext/app/uceShimService/uceShimService.apk|91f9ca2e1121ad9ff2805031ade6c685392e636c
+-product/app/uceShimService/uceShimService.apk:system_ext/app/uceShimService/uceShimService.apk|91f9ca2e1121ad9ff2805031ade6c685392e636c
 product/lib64/lib-imsvideocodec.so:system_ext/lib64/lib-imsvideocodec.so|7bf32c4afc481025cb1d49d77b7c37fb2178f3a0
 product/lib64/lib-imscamera.so:system_ext/lib64/lib-imscamera.so|2b6e58ed6af90e8647d5a4aef70cfe9c0f030438
 product/lib64/lib-imsvt.so:system_ext/lib64/lib-imsvt.so|fe8ebc9163ff15e218f9de6fa0b6ffe2ff1f3ba9
