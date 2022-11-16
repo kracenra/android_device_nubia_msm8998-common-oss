@@ -493,8 +493,14 @@ PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
 
 # Vibrator
+ifeq ($(BOARD_HAVE_NUBIA_VIBRATOR),true)
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.1-service.nubia_msm8998
+else ifeq ($(BOARD_HAVE_NUBIA_VIBRATOR),false)
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl:64 \
+    android.hardware.vibrator@1.0-service
+endif
 
 # Verity
 $(call inherit-product, build/target/product/verity.mk)
