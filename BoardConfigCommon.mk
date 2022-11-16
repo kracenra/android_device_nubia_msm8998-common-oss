@@ -110,6 +110,10 @@ ifeq ($(BOARD_HAVE_NUBIA_NFC),true)
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest-nfc.xml
 endif
 
+ifeq ($(BOARD_HAVE_NUBIA_VIBRATOR),false)
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest-vibrator.xml
+endif
+
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
