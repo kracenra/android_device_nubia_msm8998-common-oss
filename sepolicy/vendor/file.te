@@ -26,4 +26,4 @@ type sysfs_light_sensor, sysfs_type, fs_type;
 type thermal_data_file, file_type, data_file_type;
 
 # Touchscreen
-type sysfs_touchpanel, fs_type, sysfs_type;
+type sysfs_touchscreen, sysfs_type, fs_type;

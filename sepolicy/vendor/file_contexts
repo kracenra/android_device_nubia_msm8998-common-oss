@@ -62,6 +62,9 @@
 /sys/devices/virtual/light/light/light_value		                               u:object_r:sysfs_rgb_cal:s0
 /sys/devices/virtual/light/light/fac_calibrate		                               u:object_r:sysfs_rgb_cal:s0
 
+# Lineage touch
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.nubia           u:object_r:hal_lineage_touch_default_exec:s0
+
 # Root files
 /persist(/.*)?                                  u:object_r:mnt_vendor_file:s0
 
