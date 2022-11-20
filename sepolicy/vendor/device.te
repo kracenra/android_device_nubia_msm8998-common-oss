@@ -3,3 +3,7 @@ type fingerprint_device, dev_type;
 
 # IR
 type spidev_device, dev_type;
+
+# Vibrator
+type haptics_device, dev_type;
+
