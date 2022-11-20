@@ -11,3 +11,5 @@ allow system_server sysfs_prox_cal:file { open write };
 # Touchscreen
 allow system_server sysfs_sectouch:file { rw_file_perms };
 
+# Vibrator
+allow system_server sysfs_vibrator:file read;
