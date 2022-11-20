@@ -1,0 +1,33 @@
+#============= hal_fingerprint_goodix ==============
+type hal_fingerprint_goodix, domain, binder_in_vendor_violators;
+type hal_fingerprint_goodix_exec, exec_type, vendor_file_type, file_type;
+typeattribute hal_fingerprint_goodix data_between_core_and_vendor_violators;
+hal_server_domain(hal_fingerprint_goodix, hal_fingerprint)
+init_daemon_domain(hal_fingerprint_goodix)
+
+allow hal_fingerprint_goodix fingerprint_device:chr_file rw_file_perms;
+allow hal_fingerprint_goodix tee_device:chr_file rw_file_perms;
+allow hal_fingerprint_goodix uhid_device:chr_file rw_file_perms;
+allow hal_fingerprint_goodix sysfs_fingerprint:lnk_file rw_file_perms;
+allow hal_fingerprint_goodix fingerprintd_data_file:dir { create_dir_perms };
+allow hal_fingerprint_goodix fingerprintd_data_file:file { create_file_perms };
+allow hal_fingerprint_goodix sysfs_nubia_breathlight:file { r_file_perms };
+allow hal_fingerprint_goodix keystore_service:service_manager find;
+allow hal_fingerprint_goodix power_service:service_manager find;
+allow hal_fingerprint_goodix sysfs:file write;
+allow hal_fingerprint_goodix sysfs_leds:dir search;
+allow hal_fingerprint_goodix sysfs_leds:file { read open };
+allow hal_fingerprint_goodix sysfs_fingerprint:dir { r_dir_perms };
+allow hal_fingerprint_goodix sysfs_fingerprint:file { rw_file_perms };
+allow hal_fingerprint_goodix sysfs_fingerprint_irq:file { rw_file_perms };
+allow hal_fingerprint_goodix sysfs_fingerprint_wakeup:file { rw_file_perms };
+allow hal_fingerprint_goodix fpdsensor_data_file:dir { create_dir_perms };
+allow hal_fingerprint_goodix fpdsensor_data_file:file { create_file_perms };
+allow hal_fingerprint_goodix self:netlink_socket create_socket_perms_no_ioctl;
+allow hal_fingerprint_goodix fingerprint_service:service_manager find;
+
+r_dir_file(hal_fingerprint_goodix, firmware_file);
+r_dir_file(hal_fingerprint_goodix, sysfs_graphics);
+
+binder_use(hal_fingerprint_goodix)
+binder_call(hal_fingerprint_goodix, servicemanager);
