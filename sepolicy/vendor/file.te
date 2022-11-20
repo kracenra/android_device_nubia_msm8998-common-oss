@@ -25,8 +25,5 @@ type sysfs_light_sensor, sysfs_type, fs_type;
 # Proximity
 type sysfs_prox_cal, sysfs_type, fs_type;
 
-# Thermal
-type thermal_data_file, file_type, data_file_type;
-
 # Touchscreen
 type sysfs_touchscreen, sysfs_type, fs_type;
