@@ -119,3 +119,6 @@
 /sys/class/touch/tpnode/synaptics/device(/.*)? 		                             u:object_r:sysfs_touchscreen:s0
 /sys/devices/soc/c179000\.i2c/i2c-5/5-0020/input/input[0-9]+/reversed_keys              u:object_r:sysfs_touchscreen:s0
 
+# Vibrator
+/dev/drv2605		                                                                    u:object_r:haptics_device:s0
+/sys/devices/virtual/timed_output/vibrator_drv2605/enable		                     u:object_r:sysfs_vibrator:s0
