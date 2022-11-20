@@ -2,15 +2,21 @@
 /sys/devices(/platform)?/soc/[a-z0-9]+\.i2c/i2c-[0-9]+/[0-9]+-[a-z0-9]+/[a-z0-9]+\.i2c:qcom,[a-z0-9]+@[a-z0-9]:qcom,smb[a-z0-9]+-parallel-slave@[0-9]+/power_supply/parallel(/.*)?                                              u:object_r:sysfs_usb_supply:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:neo,battery/power_supply/neo-battery(/.*)?                                                                    u:object_r:sysfs_battery_supply:s0
 
-# Biometric
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.nubia_msm8998   u:object_r:hal_fingerprint_msm8998_exec:s0
+# Fingerprint (fpc)
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint\.fpc@2\.1-service		u:object_r:hal_fingerprint_default_exec:s0
+/dev/fpc		u:object_r:fingerprint_device:s0
+/data/vendor/fpc(/.*)?                                               u:object_r:fingerprint_vendor_data_file:s0
+/sys/bus/platform/devices/1.fpc1020/wakeup_enable                    u:object_r:sysfs_fingerprint_wakeup:s0
+/sys/bus/platform/devices/1.fpc1020(/.*)?                            u:object_r:sysfs_fingerprint:s0
+/sys/bus/platform/devices/1.fpc1020/irq                              u:object_r:sysfs_fingerprint_irq:s0
 
-# Fingerprint
-/data/gf_data(/.*)?                             u:object_r:fingerprintd_data_file:s0
-/data/vendor/fpc(/.*)?                          u:object_r:fingerprint_vendor_data_file:s0
-/data/vendor/gf_data(/.*)?                      u:object_r:fingerprint_vendor_data_file:s0
-/data/vendor/goodix(/.*)?                       u:object_r:fingerprint_vendor_data_file:s0
-/dev/goodix_fp                                  u:object_r:fingerprint_device:s0
+# Fingerprint (goodix)
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.nubia_msm8998          u:object_r:hal_fingerprint_goodix_exec:s0
+/data/gf_data(/.*)?                                                  u:object_r:fingerprintd_data_file:s0
+/data/vendor/gf_data(/.*)?                                           u:object_r:fingerprint_vendor_data_file:s0
+/data/vendor/goodix(/.*)?                                            u:object_r:fingerprint_vendor_data_file:s0
+/dev/goodix_fp                                                       u:object_r:fingerprint_device:s0
+
 
 # Firmware
 /firmware                                       u:object_r:firmware_file:s0
