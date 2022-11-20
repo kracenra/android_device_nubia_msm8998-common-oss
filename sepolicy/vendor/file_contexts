@@ -122,3 +122,4 @@
 # Vibrator
 /dev/drv2605		                                                                    u:object_r:haptics_device:s0
 /sys/devices/virtual/timed_output/vibrator_drv2605/enable		                     u:object_r:sysfs_vibrator:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator@1\.1-service\.nubia_msm8998		 u:object_r:hal_vibrator_default_exec:s0
