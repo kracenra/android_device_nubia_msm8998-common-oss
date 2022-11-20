@@ -17,6 +17,8 @@
 /data/vendor/goodix(/.*)?                                            u:object_r:fingerprint_vendor_data_file:s0
 /dev/goodix_fp                                                       u:object_r:fingerprint_device:s0
 
+# Fingerprint (fpdsensor)
+/data/fpdsensor(/.*)?		                                    u:object_r:fpdsensor_data_file:s0
 
 # Firmware
 /firmware                                       u:object_r:firmware_file:s0

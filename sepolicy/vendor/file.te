@@ -6,6 +6,9 @@ type sysfs_fingerprint_wakeup, sysfs_type, fs_type;
 type sysfs_fingerprint, sysfs_type, fs_type;
 type sysfs_fingerprint_irq, sysfs_type, fs_type;
 
+# Fingerprint (fpdsensor)
+type fpdsensor_data_file, file_type, core_data_file_type, data_file_type;
+
 # IR
 type ir_dev_file, file_type;
 
