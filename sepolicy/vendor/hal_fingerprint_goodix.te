@@ -25,6 +25,7 @@ allow hal_fingerprint_goodix fpdsensor_data_file:dir { create_dir_perms };
 allow hal_fingerprint_goodix fpdsensor_data_file:file { create_file_perms };
 allow hal_fingerprint_goodix self:netlink_socket create_socket_perms_no_ioctl;
 allow hal_fingerprint_goodix fingerprint_service:service_manager find;
+allow hal_fingerprint_goodix system_data_root_file:dir r_dir_perms;
 
 r_dir_file(hal_fingerprint_goodix, firmware_file);
 r_dir_file(hal_fingerprint_goodix, sysfs_graphics);
