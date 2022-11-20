@@ -1,0 +1,5 @@
+#============= hal_lineage_touch_default ==============
+allow hal_lineage_touch_default sysfs_sectouch:dir search;
+allow hal_lineage_touch_default sysfs_sectouch:file rw_file_perms;
+allow hal_lineage_touch_default sysfs_touchscreen:dir search;
+allow hal_lineage_touch_default sysfs_touchscreen:file rw_file_perms;
