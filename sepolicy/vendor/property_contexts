@@ -6,6 +6,10 @@ audio_hal.period_multiplier             u:object_r:vendor_default_prop:s0
 persist.audio.fluence.voicecomm         u:object_r:vendor_default_prop:s0
 
 # Camera
+persist.al.                             u:object_r:camera_prop:s0
+persist.al3200.                         u:object_r:camera_prop:s0
+persist.alaf.                           u:object_r:camera_prop:s0
+persist.alm.                            u:object_r:camera_prop:s0
 camera.clientname                       u:object_r:camera_prop:s0
 camera.debug.                           u:object_r:camera_prop:s0
 camera.facebeauty.version               u:object_r:camera_prop:s0
